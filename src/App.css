@@ -1,0 +1,18 @@
+.container{
+  margin:0 auto;
+  width: 10%
+}
+
+.add{
+  margin: 16px
+}
+
+.table{
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+
+th,td{
+  padding: 15px;
+}
+
