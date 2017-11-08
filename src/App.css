@@ -1,18 +1,125 @@
-.container{
-  margin:0 auto;
-  width: 10%
+body{
+  background:#f1f1f1
+}
+/* ############ Nav Bar ############### */ 
+nav{
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  position: relative;
 }
 
-.add{
-  margin: 16px
+nav ul{
+  background-color: black;
+  overflow:hidden;
+  margin: 0;
+  padding: 2px;
 }
 
-.table{
-  border: 2px solid black;
-  border-collapse: collapse;
+nav ul li{
+  list-style: none;
+  display: block;
 }
 
-th,td{
-  padding: 15px;
+.navtitle{
+  padding-bottom:20px; 
+  display: block;
+  font-size: 40px;
+  font-weight: 1000;
+  font-family: 'Poppins', sans-serif;
+  color:#d9d9d9; 
+  text-transform: uppercase;
+}
+/* ############### Form ################## */
+.form{
+  margin: 0 auto;
+  width: 20%;
+  padding: 20px;
+}
+input{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  color: black;
+  font-family: Lucida, Courier, monospace;
+  font-weight: 900;
+  font-size: small;
 }
 
+input[type=text]:focus {
+  background-color: #ffb366;
+}
+input[type=number]:focus {
+  background-color: #ffb366;
+}
+
+/* ############ Buttons ################# */
+button.add{
+  padding:5px 15px; 
+  background: #006b63;
+  color:white; 
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  margin: 4px;
+  
+}
+
+button.bayad{
+  padding:5px 15px; 
+  background: red;
+  color:white; 
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+}
+
+button.add:hover{
+  background: #fcba37;
+  border: 2px solid white;
+  color:#006b63;
+}
+
+button.bayad:hover{
+  background: red;
+  border: 2px solid white;
+  color:white;
+}
+/* ############ Table ############### */
+.table
+{
+	font-family: 'Poppins', sans-serif;
+	font-size: 12px;
+	background:  black;
+	margin: auto;
+	width: 380px;
+	border-collapse: collapse;
+	text-align: left;
+}
+.table th
+{
+	font-size: 14px;
+	font-weight: normal;
+  color:white;
+	padding: 10px 8px;
+	border-bottom: 2px solid #fcba37;
+}
+.table td
+{
+	border-bottom: 1px solid #fcba37;
+	color: white;
+	padding: 6px 8px;
+}
+
+.table tr:hover{
+  background: #006b63
+}

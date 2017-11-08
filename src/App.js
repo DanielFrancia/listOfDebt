@@ -13,56 +13,61 @@ class App extends Component {
     })
   }
 
-  burahin=(index)=>{
+  bura=(index)=>{
     this.setState({
-      listahan:this.state.listahan.slice(0,index).concat(this.state.listahan.slice(index+1))
-    })
-  }
+    listahan:this.state.listahan.slice(0,index).concat(this.state.listahan.slice(index+1))
+  })}
 
   render() {
     var list=[]
-    var total=0
-    this.state.listahan.forEach(utang=>{
-      total+=utang.amount
+    this.state.listahan.forEach((utang, i) =>{
       list.push(
         <ListItem
+          bura={this.bura}
+          index={i}
           name={utang.name}
           amount={utang.amount}/>
       )
     })
     return (
-     <div className="container">
-       <div className="con">
-     <UtangForms addUtang={this.addUtang}/>
-   </div> 
-   <br/>
-   <div>
-   <table className="table">
-   <tr>
-      <th>Tropang Umutang</th>
-      <th>Halaga</th>
-   </tr>
-     <tbody>
-     {list}
-     <tr>
-       <td>Total:</td>
-         <td>{total}</td>
-         </tr>
-         </tbody>
-     </table>
-    </div>
-    </div>
+     <div>
+       <nav>
+          <ul>
+          <li><img src="https://www.choicenotchance.org.nz/files/wallet-green-x2.png" width="180" height="80" alt="wallet logo"></img></li>
+          <li className="navtitle">Debt Collector's List</li>
+          </ul>
+      </nav>
+      <div className="form"> 
+      <UtangForms addUtang={this.addUtang}/>
+      </div>
+    
+        <div>
+          <table className="table">
+          <tr>
+              <th>Name</th>
+              <th>Amount</th>
+              <th></th>
+          </tr>
+            <tbody>
+            {list}
+            </tbody>
+            </table>
+          </div>
+      </div>
     )
   }
 }
 
 class ListItem extends Component{
-  
+  bura=()=>{
+    this.props.bura(this.props.index)
+  }
   render(){
     return(
-      <tr>
+      <tr >
         <td>{this.props.name}</td>
-        <td>{this.props.amount}<button onClick={this.burahin}>Paid</button></td>
+        <td>{this.props.amount}</td>
+        <td><button className="bayad" onClick={this.bura}>Paid</button></td>
       </tr>
     )
   }
@@ -70,3 +75,4 @@ class ListItem extends Component{
 
 
 export default App;
+

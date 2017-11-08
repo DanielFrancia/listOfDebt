@@ -28,10 +28,10 @@ class UtangForms extends Component{
         return(
             <div>
             <table>
-            <tr><td> <input value={this.state.name} onChange={this.setName} type="text" placeholder="Kaibigan"/></td></tr>
-            <tr><td> <input value={this.state.amount} onChange={this.setAmount} type="number" placeholder="Magkano?"/></td></tr>
+            <tr><td> <input value={this.state.name} onChange={this.setName} type="text" placeholder="Name"/></td></tr>
+            <tr><td> <input value={this.state.amount} onChange={this.setAmount} type="number" placeholder="Amount"/></td></tr>
             </table>
-            <button className="add" onClick={this.save}>Idagdag sa Listahan</button>
+            <button className="add" onClick={this.save}>Add to list</button>
           </div>
         )
     }
